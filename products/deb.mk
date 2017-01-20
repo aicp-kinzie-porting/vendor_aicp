@@ -2,14 +2,13 @@
 PRODUCT_RELEASE_NAME := deb
 
 # Inherit some common stuff.
-$(call inherit-product, vendor/aicp/configs/common_tablet.mk)
+$(call inherit-product, vendor/aicp/configs/common_mini_tablet_wifionly.mk)
 
 # Inherit telephony stuff
 $(call inherit-product, vendor/aicp/configs/telephony.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/asus/deb/device.mk)
-$(call inherit-product-if-exists, vendor/asus/deb/device-vendor.mk)
+$(call inherit-product, device/asus/deb/full_deb.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := deb
@@ -28,7 +27,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # AICP Device Maintainers
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="doc HD (semdoc), Ali B (eyosen)"
+    DEVICE_MAINTAINERS="Andrew Vance (Startrek852), doc HD (semdoc)"
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
